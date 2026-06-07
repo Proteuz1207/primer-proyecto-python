@@ -1,0 +1,24 @@
+# --- Archivos del Sistema Operativo ---
+Thumbs.db
+.DS_Store
+
+# --- Configuraciones del Editor (VS Code) ---
+.vscode/
+
+# --- Archivos Temporales de Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# --- Entornos Virtuales (Los usaras mas adelante) ---
+venv/
+env/
+ENV/
+
+# --- Datos pesados (Clave para Ingenieria de Datos) ---
+*.csv
+*.xlsx
+*.json
+*.sqlite3
