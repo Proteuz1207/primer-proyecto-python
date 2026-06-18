@@ -1,0 +1,24 @@
+# Script General: Gestión y Distribución de Recursos
+# Practico la declaración de variables y operaciones matemáticas básicas
+
+# 1. Definición de variables con tipos de datos variados
+nombre_proyecto = "Simulacion Alfa"
+total_elementos = 450
+cuota_por_bloque = 12.5
+procesamiento_activo = True
+
+# 2. Operación matemática general (Multiplicación)
+# Calculo el total de capacidad combinando nuestros datos numéricos
+capacidad_total = total_elementos * cuota_por_bloque
+
+# 3. Mostrar el reporte en la consola usando f-strings
+print("========================================")
+print("      CONTROL GENERAL DE RECURSOS       ")
+print("========================================")
+print(f"Identificador del Proyecto: {nombre_proyecto}")
+print(f"Elementos Registrados: {total_elementos} unidades")
+print(f"Cuota asignada por Bloque: {cuota_por_bloque}")
+print(f"¿Estado de Ejecución Activo?: {procesamiento_activo}")
+print("----------------------------------------")
+print(f"CAPACIDAD TOTAL DEL SISTEMA: {capacidad_total}")
+print("========================================")
