@@ -1,0 +1,20 @@
+# Script General: Control de Flujo y Toma de Decisiones
+# Evaluando el estado de la capacidad de un sistema
+
+# 1. Variables base (Inputs)
+nombre_sistema = "Servidor Central"
+capacidad_actual = 85.5
+
+print(f"== Monitoreo del Sistema: {nombre_sistema} ===")
+print(f"Capacidad de uso actual: {capacidad_actual}%")
+print("----------------------------------------")
+
+# 2. Estructura Condicional (Toma de decisiones)
+if capacidad_actual >= 90.0:
+    print("🚨 ALERTA CRÍTICA: El sistema está casi lleno. Se requiere liberar recursos.")
+elif capacidad_actual >= 70.0:
+    print("⚠️ ADVERTENCIA: Uso moderado-alto. Monitorear comportamiento.")
+else:
+    print("✅ ESTADO ÓPTIMO: El sistema opera bajo niveles estables.")
+
+print("========================================")
