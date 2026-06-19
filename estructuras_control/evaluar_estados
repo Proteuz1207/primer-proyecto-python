@@ -1,0 +1,33 @@
+# ==============================================================================
+# SCRIPT: evaluador_estados.py
+# OBJETIVO: Evaluar el estado del sistema mediante lógica booleana pura.
+# ENFOQUE: Optimización de recursos evitando comparaciones explícitas (== True/False)
+# ==============================================================================
+
+# 1. ESTADO DEL SISTEMA (Inputs de datos)
+# Definimos los valores crudos que el procesador va a evaluar directamente.
+
+temperatura = 30
+sensor_disponible = False
+
+# 2. EVALUACIÓN Y TOMA DE DECISIONES CHOCANDO VALORES BOOLEANOS
+#
+# ¿Por qué 'temperatura == 30'?
+# Aquí sí usamos '==' porque estamos comparando un número con otro para obtener un veredicto.
+# Como la temperatura es 30, esta primera parte se resuelve como TRUE.
+#
+# ¿Por qué 'not sensor_disponible'?
+# Evitamos usar '== False'. El condicional 'if' y el operador 'and' no necesitan comparar,
+# solo necesitan un valor TRUE neto para dejar pasar el flujo. Como el sensor está en False, 
+# el operador 'not' actúa como un inversor de corriente: toma ese False y lo convierte en TRUE.
+#
+# ¿Cómo lo resuelve el 'and'?
+# Al evaluar (TRUE and TRUE), ambas condiciones se cumplen de forma neta. La compuerta lógica
+# se abre de inmediato sin haber perdido tiempo procesando comparaciones redundantes.
+
+
+if temperatura == 30 and not sensor_disponible:
+    print("Alerta la temperatura excede el limite de tolerencia")
+
+else:
+    print("El sistema opera de forma eficiente")
