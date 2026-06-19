@@ -15,7 +15,7 @@ if uso_memoria > 80.0 and procesamiento_activo == True:
     print("🚨 ALERTA: Alta carga detectada en ejecución. Iniciando desvío de flujo.")
 
 # Caso B: El sistema está vacío o el interruptor está apagado
-elif uso_memoria < 20.0 or procesamiento_activo == Falsealse:
+elif uso_memoria < 20.0 or procesamiento_activo == False:
     print("💤 MODO ESPERA: Sistema en ahorro de energía o inactivo.")
 
 else: 
