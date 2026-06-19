@@ -1,0 +1,24 @@
+# Script General: Evaluación de Múltiples Condiciones
+# Aplicando operadores lógicos para el control de infraestructura
+
+# 1. Variables de estado (Inputs)
+uso_memoria = 85.0
+procesamiento_activo = True
+
+print("=== Estado de Control de Infraestructura ===")
+print(f"Uso de memoria: {uso_memoria}% | ¿Procesamiento Activo?: {procesamiento_activo}")
+print("--------------------------------------------------")
+
+# 2. Toma de decisiones combinada
+# Caso A: El sistema trabaja bajo alta carga y sigue encendido
+if uso_memoria > 80.0 and procesamiento_activo == True:
+    print("🚨 ALERTA: Alta carga detectada en ejecución. Iniciando desvío de flujo.")
+
+# Caso B: El sistema está vacío o el interruptor está apagado
+elif uso_memoria < 20.0 or procesamiento_activo == Falsealse:
+    print("💤 MODO ESPERA: Sistema en ahorro de energía o inactivo.")
+
+else: 
+    print("✅ ESTADO NOMINAL: El sistema opera con normalidad estable.")
+
+print("==================================================")

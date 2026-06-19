@@ -3,7 +3,7 @@
 
 # 1. Variables base (Inputs)
 nombre_sistema = "Servidor Central"
-capacidad_actual = 85.5
+capacidad_actual = 55.5
 
 print(f"== Monitoreo del Sistema: {nombre_sistema} ===")
 print(f"Capacidad de uso actual: {capacidad_actual}%")
