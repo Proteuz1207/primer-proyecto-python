@@ -1,0 +1,27 @@
+# Script General: Procesamiento de Colecciones con Bucle For
+# Recorriendo y analizando un paquete de registros secuenciales
+
+# 1. Creamos una lista con lecturas de datos (nuestro paquete de datos)
+registro_sistema = [45.2, 78.1, 92.6, 64.0, 88.7]
+
+print("=== Iniciando Procesamiento por Lote ===")
+print(f"Paquete completo a procesar: {registro_sistema}")
+print("------------------------------------------------")
+
+# 2. El Bucle For: Se lee "Para cada 'lectura' que encuentres dentro de 'registros_sistema'"
+for lectura in registro_sistema:
+
+    # Dentro del bucle, la variable 'lectura' va cambiando de valor en cada vuelta
+    print(f"📥 Analizando registro actual: {lectura}%")
+
+    if lectura >= 90.0:
+        print("   🚨 ALERTA: Este registro específico supera el límite crítico.")
+    elif lectura >= 75.0:
+        print("   ⚠️ ADVERTENCIA: Este registro muestra carga elevada.")
+    else:
+        print("   ✅ ESTADO NORMAL: Registro dentro del rango óptimo.")
+        
+    print("   ...") # Separador visual por cada elemento
+
+print("------------------------------------------------")
+print("🏁 Fin del lote. Todos los registros fueron procesados con éxito.")
