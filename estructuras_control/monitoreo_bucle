@@ -1,0 +1,27 @@
+# Script General: Monitoreo Continuo con Bucles
+# Aplicando el bucle 'while' para repetir un proceso de control
+
+# 1. Variables de control (Inputs)
+ciclo_actual = 1
+maximo_ciclos = 5
+sistema_activo = True
+
+print("=== Iniciando Sistema De Monitereo General ===")
+print("----------------------------------------------")
+
+# 2. El Bucle While: Se ejecuta MIENTRAS 'sistema_activo' sea True
+while sistema_activo:
+    print(f" Ejecutando revision numero: {ciclo_actual}")
+
+    # Condición de parada: Si llegamos al límite de ciclos, apagamos el interruptor
+    if ciclo_actual == maximo_ciclos:
+        print("🛑 Límite de revisiones alcanzado. Apagando interruptor de control.")
+        sistema_activo = False # Al volverse False, la próxima vuelta del 'while' romperá el bucle
+    
+    # Incremento obligatorio: Sumamos 1 al contador para avanzar en la siguiente vuelta
+    # Nota: 'ciclo_actual += 1' es lo mismo que escribir 'ciclo_actual = ciclo_actual + 1'
+    ciclo_actual += 1  
+
+
+print("----------------------------------------------")
+print("✅ Proceso finalizado. El sistema se cerró de forma segura.")
