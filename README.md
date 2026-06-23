@@ -1,33 +1,28 @@
-# 🐍 Laboratorio de Fundamentos de Python
+# 🚀 My Data Engineering & Programming Journey
 
-¡Bienvenido a mi repositorio de aprendizaje! Este espacio está dedicado a consolidar mis conocimientos prácticos de programación durante mi primer año de carrera universitaria, sirviendo como base y portafolio para mi camino hacia la Ingeniería de Datos.
-
-El objetivo de este repositorio es mantener un código limpio, estructurado y documentado, aplicando buenas prácticas de control de versiones con Git desde el inicio.
+Welcome to my central learning repository! This space documents my daily progress, coding scripts, and database projects as I build my foundation to become a professional Data Engineer.
 
 ---
 
-## 📂 Estructura del Repositorio
+## 📁 Repository Architecture & Modules
 
-Para mantener el orden visual y jerárquico, el proyecto está dividido en los siguientes módulos dinámicos:
+### 🐍 Python Programming
 
-*   **`introduccion/`**: Scripts iniciales enfocados en la sintaxis básica del lenguaje, manejo de variables, tipos de datos y operaciones elementales (como nuestro primer `main.py`).
-*   **`estructuras_control/`**: Ejercicios prácticos que involucran la lógica de toma de decisiones (`if/else`), bucles iterativos (`for/while`) y la modularización a través de funciones (ej. `tabla_multiplicar.py`).
-*   **`proyectos/`**: Espacio reservado para los trabajos integradores y asignaciones finales de mis asignaturas universitarias.
+* **`introduccion/`**: Foundational Python concepts, resource management (`gestor_resources`), and basic control flow (`control_flow`). Includes the main execution file (`main.py`).
+* **`estructuras_control/`**: Intermediate logic implementations mixing loops, dictionaries, data processors, and status evaluations (`evaluar_estados`, `gestion_diccionarios.py`, `procesador_datos`).
+* **`proyectos/`**: Practical applications and unifications of programming logic.
 
----
+### 📊 SQL Database Engineering
 
-## 🛠️ Tecnologías y Entorno
-
-*   **Lenguaje Principal:** Python 3.10+
-*   **Entorno de Desarrollo:** Visual Studio Code
-*   **Control de Versiones:** Git & GitHub Académico
+* **`Modulo_02_Joins/`**: Relational database theory and complex unifications.
+    * `02_reto_deptos_fantasmas.sql`: Query implementation for identifying orphaned or empty department records using advanced `LEFT JOIN` and `IS NULL` filters.
 
 ---
 
-## 🚀 Cómo Ejecutar los Scripts
+## 🛠️ Environment & Technical Stack
+* **Languages:** Python 3.x, SQL (ANSI standard)
+* **Database Engine:** SQLite (via DB Browser for SQLite)
+* **Tools:** Visual Studio Code, Git, and GitHub for version control.
 
-Si deseas probar localmente alguno de los ejercicios de este repositorio, asegúrate de tener Python instalado y ejecuta el comando apuntando a la ruta del archivo desde la terminal:
-
-```bash
-# Ejemplo para ejecutar el script de tablas de multiplicar:
-python estructuras_control/tabla_multiplicar.py
+---
+_“The goal is not just to write queries and scripts that work, but solutions that scale.”_
