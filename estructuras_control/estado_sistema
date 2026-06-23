@@ -1,0 +1,18 @@
+paquete_datos = [12, 45, 85, 30]
+sistema_operativo_ok = True
+
+if not sistema_operativo_ok:
+    print("❌ ERROR GENERAL: El sistema está apagado. Operación cancelada.")
+
+else:
+    print("🔄 Iniciando procesamiento de lote...")
+    print("------------------------------------------------")
+    
+    for registro in paquete_datos:
+        if registro >= 80:
+            print(f"🚨 ALERTA: El Registro {registro} supera el límite de tolerancia.")
+        else:
+            print(f"✅ ÉXITO: El Registro {registro} fue procesado con éxito.")
+            
+    print("------------------------------------------------")
+    print("🏁 Fin del lote de datos.")
