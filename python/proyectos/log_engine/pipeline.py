@@ -4,7 +4,12 @@
 # ==============================================================================
 
 # 1. Variables de Control de Infraestructura
-paquete_datos = [12, 45, 85, 30]
+lote_servidores = [
+    {"id": "SRV-ALFA",  "consumo_cpu": 45, "zona": "Santo Domingo"},
+    {"id": "SRV-BETA",  "consumo_cpu": 88, "zona": "Santiago"},
+    {"id": "SRV-GAMMA", "consumo_cpu": 92, "zona": "Santo Domingo Oeste"},
+    {"id": "SRV-DELTA", "consumo_cpu": 15, "zona": "La Romana"}
+]
 sistema_operativo_ok = True  # Modifica a False para verificar el bloqueo de memoria
 
 print("=== LOGENGINE: Iniciando Extracción de Métricas ===")
@@ -18,11 +23,26 @@ else:
     print("-" * 50)
     
     # El bucle FOR se ejecuta de forma segura sabiendo que el sistema responde
-    for registro in paquete_datos:
-        if registro >= 80:
-            print(f"🚨 ALERTA DE CARGA: Registro {registro}% excede el umbral seguro.")
+    for registro in lote_servidores:
+        codigo_id = registro["id"]
+        carga_cpu = registro["consumo_cpu"]
+        ubicacion = registro["zona"]
+
+        # 4. Lógica de Negocio (Evaluación de alertas en base a los datos extraídos)
+        
+        if carga_cpu >= 80:
+            estado_visual = f"🚨 ALERTA CRÍTICA: {carga_cpu}% CPU"
         else:
-            print(f"🟢 ESTADO NORMAL: Registro {registro}% validado correctamente.")
+            estado_visual = f"🟢 ESTADO ESTABLE: {carga_cpu}% CPU"
             
-    print("-" * 50)
-    print("🏁 Pipeline finalizado con éxito.")
+        # 5. Formateo limpio en pantalla usando alineación de espacios
+        print(f"🖥️ Nodo: {codigo_id:<12} | Ubicación: {ubicacion:<20} | {estado_visual}")
+        
+    print("=" * 65)
+    print("🏁 Pipeline de procesamiento finalizado correctamente.")
+        
+
+
+
+
+
