@@ -20,7 +20,7 @@ for producto in almacen:
     if producto["stock"] == 0:
         print(f"Se retiró del inventario: {producto['nombre']}")
 
-almacen = [producto for producto in almacen if producto["stock"] > 0]
+almacen = [producto for producto in almacen if producto["precio"] < 100]
 
 # 4. Imprimir inventario final
 for producto in almacen:
