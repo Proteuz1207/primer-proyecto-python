@@ -1,3 +1,4 @@
+
 almacen = [
     {"nombre": "arroz", "precio": 50, "stock": 100},
     {"nombre": "pollo", "precio": 95, "stock": 98},
@@ -15,10 +16,10 @@ for producto in almacen:
     if producto["nombre"] == "arroz":
         producto["precio"] = 60
 
-# 3. Eliminar productos sin stock ANTES de imprimir
+# 3. Identificar y eliminar productos fuera del rango de precio
 for producto in almacen:
-    if producto["stock"] == 0:
-        print(f"Se retiró del inventario: {producto['nombre']}")
+    if producto["precio"] >= 100:
+        print(f"Productos fuera del rango de precio: {producto['nombre']}")
 
 almacen = [producto for producto in almacen if producto["precio"] < 100]
 
