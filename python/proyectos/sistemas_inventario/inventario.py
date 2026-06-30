@@ -41,3 +41,17 @@ almacen = filtrar_por_precio(almacen, 100)
 for producto in almacen:
     resultado = ver_stock(producto)
     print(f"{producto['nombre']} : {resultado}")
+
+# Precio a pagar segun el producto este disponible
+
+def calcular_precio_final(stock, precio, cantidad, impuestos = 0.12):
+    if stock > 0:
+        return (precio * cantidad) + (precio * cantidad * impuestos)    
+    else:
+        return "No hay inventario de este producto"
+for buscar in almacen:
+    stock = buscar["stock"]
+    precio = buscar["precio"]
+    nombre = buscar["nombre"]
+    resultado = calcular_precio_final(stock, precio, 1)
+    print (f"{nombre}  precio final: {resultado}")
