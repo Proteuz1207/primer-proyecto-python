@@ -10,6 +10,7 @@ PRAGMA foreign_keys = ON;
 DROP TABLE IF EXISTS colaboradores;
 DROP TABLE IF EXISTS empleados;
 DROP TABLE IF EXISTS departamentos;
+DROP TABLE IF EXISTS productos;
 
 -- ====================================================================
 -- 2. DEFINICIÓN DE ESTRUCTURAS (DDL)
@@ -30,6 +31,12 @@ CREATE TABLE departamentos (
     nombre_depto TEXT NOT NULL UNIQUE
 );
 
+CREATE TABLE productos (
+    id_producto INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre_producto TEXT NOT NULL UNIQUE,
+    stock INTEGER NOT NULL CHECK(stock >= 0)
+);
+
 -- Tabla Dependiente (Relación Entidad-Relación)
 CREATE TABLE colaboradores (
     id_colaborador INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -37,7 +44,7 @@ CREATE TABLE colaboradores (
     id_departamento INTEGER,
     -- Configuración del candado de integridad referencial
     FOREIGN KEY (id_departamento) REFERENCES departamentos(id_departamento)
-    ON DELETE RESTRICT
+    ON DELETE RESTRICT -- <--- CAMBIAMOS RESTRICT POR CASCADE
 );
 
 -- ====================================================================
