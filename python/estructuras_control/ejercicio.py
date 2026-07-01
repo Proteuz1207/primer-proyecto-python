@@ -1,17 +1,24 @@
-
-
-
-def obtener_precio(producto):
+def reporte_empleado(empleado):
     try:
-     if producto["stock"] > 0:
-        precio = producto["precio"]
-        return precio * 1.12
+        salario = empleado["salario"]
     except KeyError:
-        return "Dato faltante en el producto"
+        salario = "salario no registrado"
+
+    try:
+        departamento = empleado["departamento"]
+    except KeyError:
+        departamento = "departamento no registrado"
+
+    return f"{empleado['nombre']} - salario: ${salario}, departamento: {departamento}"
+
+empleados = [
+    {"nombre": "Carlos", "salario": 35000, "departamento": "Ventas"},
+    {"nombre": "Sofía", "departamento": "Marketing"},
+    {"nombre": "Pedro", "salario": 28000},
+    {"nombre": "Ana", "salario": 42000, "departamento": "IT"}
+]
 
 
-producto1 = {"nombre": "café", "precio": 120, "stock": 10}
-producto2 = {"nombre": "té", "stock": 5}  # sin precio
+for buscar in empleados:
+    print(reporte_empleado(buscar))
 
-print(f"El precio del {producto1['nombre']} es: {obtener_precio(producto1)}")
-print(f"El precio del {producto2['nombre']} es: {obtener_precio(producto2)}")

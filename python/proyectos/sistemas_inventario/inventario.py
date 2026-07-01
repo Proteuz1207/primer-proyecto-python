@@ -36,6 +36,17 @@ def obtener_precio(producto):
         return precio * 1.12
     except KeyError:
         return "Este producto no tiene precio"
+def reporte_producto(producto):
+    try:
+        precio = producto["precio"]
+    except KeyError:
+        precio = "precio no registrado"
+    
+    try:
+        stock = producto["stock"]
+    except KeyError:
+        stock = "stock no registrado"
+    return f"{producto['nombre']} — precio: ${precio}, stock: {stock}"
 # =====================
 # PROCESAMIENTO
 # =====================
@@ -63,3 +74,20 @@ for buscar in almacen:
     nombre = buscar["nombre"]
     resultado = calcular_precio_final(stock, precio, 1)
     print (f"{nombre}  precio final: {resultado}")
+
+
+producto1 = {"nombre": "café", "precio": 120, "stock": 10}
+producto2 = {"nombre": "té", "stock": 5}
+
+print(f"El precio del {producto1['nombre']} es: {obtener_precio(producto1)}")
+print(f"El precio del {producto2['nombre']} es: {obtener_precio(producto2)}")
+
+productos = [
+    {"nombre": "café", "precio": 120, "stock": 10},
+    {"nombre": "té", "stock": 5},
+    {"nombre": "azúcar", "precio": 80},
+    {"nombre": "sal", "precio": 30, "stock": 0}
+]
+
+for producto in productos:
+    print(reporte_producto(producto))
