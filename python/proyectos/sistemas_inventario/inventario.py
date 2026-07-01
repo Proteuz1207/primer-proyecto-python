@@ -23,6 +23,19 @@ def ver_stock(producto):
 def filtrar_por_precio(inventario, precio_maximo):
     return [producto for producto in inventario if producto["precio"] < precio_maximo]
 
+
+def calcular_precio_final(stock, precio, cantidad, impuestos = 0.12):
+    if stock > 0:
+        return (precio * cantidad) + (precio * cantidad * impuestos)    
+    else:
+        return "No hay inventario de este producto"
+    
+def obtener_precio(producto):
+    try:
+        precio = producto["precio"]
+        return precio * 1.12
+    except KeyError:
+        return "Este producto no tiene precio"
 # =====================
 # PROCESAMIENTO
 # =====================
@@ -44,11 +57,6 @@ for producto in almacen:
 
 # Precio a pagar segun el producto este disponible
 
-def calcular_precio_final(stock, precio, cantidad, impuestos = 0.12):
-    if stock > 0:
-        return (precio * cantidad) + (precio * cantidad * impuestos)    
-    else:
-        return "No hay inventario de este producto"
 for buscar in almacen:
     stock = buscar["stock"]
     precio = buscar["precio"]

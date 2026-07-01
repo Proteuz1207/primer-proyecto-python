@@ -1,30 +1,17 @@
-def evaluar_desempeño(empleados):
-    if empleados["ventas_mes"] >= empleados["meta"]:
-        return "meta cumplida"
-    else:
-        return "meta no alcanzada"
 
 
 
-empleados = [
-    {"nombre": "Carlos", "ventas_mes": 15000, "meta": 12000},
-    {"nombre": "Sofía", "ventas_mes": 9000, "meta": 12000},
-    {"nombre": "Pedro", "ventas_mes": 12000, "meta": 12000}
-]
+def obtener_precio(producto):
+    try:
+     if producto["stock"] > 0:
+        precio = producto["precio"]
+        return precio * 1.12
+    except KeyError:
+        return "Dato faltante en el producto"
 
 
-for verificar in empleados:
-    resultado = evaluar_desempeño(verificar)
-    nombre_empleado = verificar["nombre"]
-    print(f"{nombre_empleado}: {resultado}")
+producto1 = {"nombre": "café", "precio": 120, "stock": 10}
+producto2 = {"nombre": "té", "stock": 5}  # sin precio
 
-# Calculo de precio final
-
-def calcular_precio_final(precio, cantidad, impuesto = 0.18):
-    resultado = (precio * cantidad) + (precio * cantidad * impuesto)
-    return resultado
-
-print(calcular_precio_final(200, 7))
-print(calcular_precio_final(200, 7, 0.10))
-
-
+print(f"El precio del {producto1['nombre']} es: {obtener_precio(producto1)}")
+print(f"El precio del {producto2['nombre']} es: {obtener_precio(producto2)}")
